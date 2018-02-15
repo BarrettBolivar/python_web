@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="column">
+        <h3>Your Gold: {{total}}</h3>
+        <form action="/clear" method="POST" class="reset">
+            <input type="submit" name="submit" value="Reset" />
+        </form>
+    </div>
+    <div class="column">
+        <div class="boxes">
+            <h3>Farm</h3>
+            <p>(makes 10-20 gold)</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="hidden" value="farm"/>
+                <input type="submit" name="submit" value="gold"/>
+            </form>
+        </div>
+        <div class="boxes">
+            <h3>Cave</h3>
+            <p>(makes 5-10 gold)</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="hidden" value="cave"/>
+                <input type="submit" name="submit" value="gold"/>
+            </form>
+        </div>
+        <div class="boxes">
+            <h3>House</h3>
+            <p>(makes 2-5 gold)</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="hidden" value="house"/>
+                <input type="submit" name="submit" value="gold"/>
+            </form>
+        </div>
+        <div class="boxes">
+            <h3>Casino</h3>
+            <p>(win or lose 0-50 gold)</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="hidden" value="casino"/>
+                <input type="submit" name="submit" value="gold"/>
+            </form>
+        </div>
+    </div>
+    <div class="column">
+        <div class="activities">
+            <h3>Activities:</h3>
+            {% if activities %}
+            <ul>
+                {% for class, activity in activities %}
+                    <li class={{class}}>{{activity}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -5,13 +5,9 @@ app = Flask(__name__)
 def index():
   return render_template("index.html")
 
-@app.route('/dojos/new')
-def dojo_new():
-   return render_template("dojos.html")
-
-@app.route('/users', methods=['POST'])
+@app.route('/process', methods=['POST'])
 def usercreation():
     name = request.form['name']
-    return redirect('/')
+    return render_template('process.html', name1 = name)
 
 app.run(debug=True)
