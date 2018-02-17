@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Result</title>
+       <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='my_stylesheet.css')}}">
+    </head>
+    <body>
+        <div class= "wrapper">
+            <div class= "box">
+                <h1>Submitted Info </h1>
+                <ul>
+                    <li>Name: {{ name1 }}</li><br>
+                    <li>Location: {{ location1 }}</li><br>
+                    <li>Language: {{ language1 }}</li><br>
+                    <li>Comment: {{ comment1 }}</li><br>
+                </ul>
+                <form action="/">
+                    <input type='submit' value='go back'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

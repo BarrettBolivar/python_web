@@ -1,0 +1,20 @@
+
+.wrapper {
+    padding: 15%;
+}
+.box {
+    border: 2px solid black;
+}
+h1 {
+    text-align: center;
+    display: block;
+}
+form {
+    text-align: center;
+    display: block;
+}
+ul {
+    text-align: center;
+    display: block;
+    list-style: none;
+}
